@@ -75,7 +75,7 @@ function createItem(info) {
     return html
 }
 
-const countriesContainer = document.getElementById('countries');
+const countriesContainer = document.getElementById('countriesGroup');
 
 function countriesList (data) {
     let htmlCountries = "";
