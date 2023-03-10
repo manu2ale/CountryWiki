@@ -15,8 +15,23 @@ async function getCountries() {
 
 getCountries();
 
-const form = document.querySelector("form");
+
+const parallCard = document.getElementById('cardContainer');
+window.addEventListener('scroll', ()=> {
+    let value = window.scrollY;
+
+    parallCard.style.top = value * -0.5 + 'px';
+})
+
+
 const inputSearch = document.getElementById('countrySearch');
+const searchLink = document.getElementById('searchLink');
+searchLink.addEventListener('click', () => {
+    inputSearch.focus();
+});
+
+
+const form = document.querySelector("form");
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -47,7 +62,8 @@ function createCard(country) {
         capital = "-"
     } else {
         capital = country.capital;
-    }
+    };
+   
 
     card.innerHTML = 
         `
@@ -71,7 +87,7 @@ function createCard(country) {
 };
 
 function createItem(info) {
-    let html = `<button class="buttonPill" id=${info.name.common} >${info.flag} ${info.name.common}</button>`
+    let html = `<a href="#search" class="buttonPill" id=${info.ccn3}>${info.flag} ${info.name.common}</a>`
     return html
 }
 
@@ -90,8 +106,7 @@ function countriesList (data) {
 function showCountry (data) {
     const buttonCountry = document.querySelectorAll('.buttonPill');
     buttonCountry.forEach(element => element.addEventListener('click', () => {
-        // console.log(element.innerHTML)
-        let countryFind = data.find(item => element.innerHTML.includes(item.name.common));
+        let countryFind = data.find(item => element.id.includes(item.ccn3));
         createCard(countryFind);
         
     }));
