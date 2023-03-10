@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+:root {
+    --off-white : rgb(250, 249, 246);
+}
+
+
+*:not(ul,ol) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+    115deg,
+    rgba(81, 179, 179, 0.7),
+    rgba(136, 206, 206, 0.7)
+    ),
+    url("./assets/bgcountries.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 80px;
+    scroll-behavior: smooth;
+}
+
+nav {
+    z-index: 9999;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 0 3rem;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(250, 249, 246, 0.9);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    transition: filter 0.3s ease-in-out;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.logo:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+nav img {
+    height: 50px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(89, 89, 89);
+    font-size: 1.3rem;
+    margin: 0 2.6rem;
+}
+
+.menu a:hover{
+    border-bottom: 2px solid black;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#countrySearch {
+    width: 320px;
+    height: 42px;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    margin-right: 0;
+    background-color: rgba(250, 249, 246, 0.9);
+    border: 1.5px solid rgba(209, 213, 219, 0.8);
+}
+
+#countrySearch::placeholder {
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: var(--off-white);
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    width: 48px;
+    height: 42px;
+    border: none;
+    outline: none;    
+    margin-left: 0;
+}
+
+/* Card Styles */
+#cardContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flagHeader {
+    position: absolute;
+    top:28px;
+    text-align: center;
+    z-index: 8888;
+}
+
+.flag {
+    width: 250px;
+    box-shadow: 0px 0px 15px 2px var(--off-white);
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 58px;
+    margin-top: 150px;
+    padding: 55px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+}
+
+.data {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.data h1 {
+    word-wrap: break-word;
+}
+
+.coatOfArms {
+    height: 240px;
+}
+
+#countries {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.buttonPill {
+    margin: 3px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+:is(button[type="submit"], .buttonPill, #countrySearch):hover {
+    cursor: pointer;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 100vh;
+    height: 80px;
+    background-color:darkslategrey;
+    color: var(--off-white)
+}
